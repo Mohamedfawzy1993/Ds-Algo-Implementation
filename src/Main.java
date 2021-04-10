@@ -1,4 +1,7 @@
 import ds.Array;
+
+import java.util.ArrayList;
+
 import static java.lang.System.*;
 
 /**
@@ -8,16 +11,23 @@ import static java.lang.System.*;
  */
 public class Main {
     public static void main(String[] args) {
-        Array array = new Array(2);
-        array.insert("Hello");
-        array.insert("Hello1");
-        array.insert("Hello2");
-        array.insert("Hello3");
-        array.deleteAt(99);
-        out.println(array.indexOf("Hello3"));
-        array.print();
-
+      testArrayImpl();
     }
+
+    public static void testArrayImpl() {
+        Array array = new Array(2);
+        array.insert(1);
+        array.insert(4);
+        array.insert(0);
+        array.insert(40);
+//        array.reverse();
+        array.insertAt("Hello", 100);
+        array.print();
+    }
+
 }
+
+//ArrayList Grow by 50% - Not Sync
+//Vector Grow by 100% - Sync
 
     
