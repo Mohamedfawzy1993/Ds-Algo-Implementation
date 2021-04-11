@@ -118,3 +118,8 @@ public class Array {
 }
 
     
+//Insert -> O(n)
+//Fetch -> O(1)
+//Delete -> O(n)
+//ArrayList Grow by 50% - Not Sync
+//Vector Grow by 100% - Sync
