@@ -2,7 +2,7 @@ package ds.stack;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.Stack;
+import ds.stack.Stack;
 
 /**
  * The Class BalanceString
@@ -15,7 +15,7 @@ public class BalanceString {
     List<Character> right = Arrays.asList(')', '>', '}', ']');
 
     public Boolean isBalanced(String str) {
-        Stack<Character> stack = new Stack();
+        Stack stack = new Stack();
         for (Character c : str.toCharArray()) {
             if (left.contains(c))
                 stack.push(c);

@@ -1,6 +1,7 @@
 import ds.Array;
 import ds.linkedlist.LinkedList;
 import ds.stack.BalanceString;
+import ds.stack.Stack;
 
 import java.util.Arrays;
 
@@ -15,6 +16,7 @@ public class Main {
         //testArrayImpl();
         //testLinkedListImpl();
         System.out.println(new BalanceString().isBalanced("((<1>+<2>))[a]"));
+//        testStackImpl();
     }
 
     public static void testArrayImpl() {
@@ -41,6 +43,20 @@ public class Main {
         linkedList.print();
         System.out.println(linkedList.findKthFromLast(4));
     }
+
+    public static void testStackImpl(){
+        Stack stack = new Stack();
+        stack.push("a");
+        stack.push("b");
+        stack.push("c");
+        stack.push("d");
+        System.out.println(stack.pop());
+        System.out.println(stack.pop());
+        System.out.println(stack.pop());
+        System.out.println(stack.pop());
+    }
+
+
 
 }
 
