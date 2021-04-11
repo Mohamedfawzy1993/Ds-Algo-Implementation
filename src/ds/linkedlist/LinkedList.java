@@ -138,6 +138,25 @@ public class LinkedList {
         //Assiging First to Previous
         first = previous;
     }
+
+    public Object findKthFromLast(int k) {
+        if(k >= length)
+            throw new IllegalArgumentException();
+        int distance = k;
+        Node first = this.first;
+        Node second;
+        do{
+           second = first;
+           for(int i = 0 ; i < distance ; i++){
+               second = second.next;
+           }
+           if(second.next == null)
+               return first.value;
+           else
+               first = first.next;
+        } while (true);
+
+    }
 }
 
 
