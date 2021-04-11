@@ -28,19 +28,12 @@ public class Main {
 
     public static void testLinkedListImpl(){
         LinkedList linkedList = new LinkedList();
-//        linkedList.insert("Hello");
-//        linkedList.insert("Hello1");
-//        linkedList.insert("Hello2");
-//        linkedList.insert("Hello3");
-//        linkedList.insert("Hellox");
-        linkedList.addLast("Hello");
-        linkedList.addLast("Hello1");
-        linkedList.addLast("Hello2");
-        linkedList.addLast("Hello3");
-        linkedList.deleteLast();
-        linkedList.deleteFirst();
-        linkedList.addLast("Hello Final");
-        System.out.println(linkedList.size());
+//        linkedList.addLast("Hello");
+//        linkedList.addLast("Hello1");
+//        linkedList.addLast("Hello2");
+//        linkedList.addLast("Hello3");
+//        linkedList.addLast("Hello Final");
+        linkedList.reverse();
         Object[] arr = linkedList.toArray();
         System.out.println(Arrays.toString(arr));
 //        linkedList.print();

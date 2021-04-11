@@ -116,6 +116,28 @@ public class LinkedList {
         }
         return arr;
     }
+
+    public void reverse() {
+        if(length == 0)
+            return;
+        //         p ->   c  -> n
+        //        [10 -> 20 -> 30]
+        Node current = first.next;
+        Node previous = first;
+
+        while(current != null){
+            Node next = current.next;
+            current.next = previous;
+            previous = current;
+            current = next;
+        }
+
+        //Assigning First to last
+        last = first;
+        last.next = null;
+        //Assiging First to Previous
+        first = previous;
+    }
 }
 
 
