@@ -157,6 +157,16 @@ public class LinkedList {
         } while (true);
 
     }
+
+    public Object get(int index){
+        if(index == 0)
+            return first.value;
+        Node temp = first;
+        for(int i = 0 ; i< index; i++){
+            temp = temp.next;
+        }
+        return temp.value;
+    }
 }
 
 

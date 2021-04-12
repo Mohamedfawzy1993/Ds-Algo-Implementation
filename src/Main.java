@@ -1,6 +1,8 @@
 import ds.array.Array;
 import ds.linkedlist.LinkedList;
 import ds.queue.ArrayQueue;
+import ds.queue.LinkedListQueue;
+import ds.queue.PriorityQueue;
 import ds.queue.StackQueue;
 import ds.stack.BalanceString;
 import ds.stack.Stack;
@@ -22,9 +24,10 @@ public class Main {
         //System.out.println(new BalanceString().isBalanced("((<1>+<2>))[a]"));
         //testStackImpl();
         //testQueueReverse();
-        testQueueWith2Stacks();
-
-
+        //testQueueWith2Stacks();
+        //testPrioQueue();
+        //reverseKthIndexOfQueue(3);
+        testLinkedListQueue();
     }
 
     public static void testArrayImpl() {
@@ -92,14 +95,74 @@ public class Main {
 
     public static void testQueueWith2Stacks(){
         ds.queue.Queue queue = new StackQueue();
-//        queue.enqueue(10);
-//        queue.enqueue(20);
-//        queue.enqueue(30);
+        queue.enqueue(10);
+        queue.enqueue(20);
+        queue.enqueue(30);
 
-//        System.out.println(queue);
+        System.out.println(queue);
         System.out.println(queue.dequeue());
         System.out.println(queue.dequeue());
         System.out.println(queue.dequeue());
+    }
+
+    public static void testPrioQueue(){
+        PriorityQueue priorityQueue = new PriorityQueue();
+        priorityQueue.enqueue(4);
+        priorityQueue.enqueue(92);
+
+
+        priorityQueue.enqueue(9);
+
+        priorityQueue.enqueue(92);
+
+        System.out.println(priorityQueue);
+
+        System.out.println(priorityQueue.dequeue());
+        System.out.println(priorityQueue.dequeue());
+        System.out.println(priorityQueue.dequeue());
+        System.out.println(priorityQueue.dequeue());
+        priorityQueue.enqueue(1);
+        priorityQueue.enqueue(1);
+        priorityQueue.enqueue(1);
+        priorityQueue.enqueue(1);
+        System.out.println(priorityQueue);
+
+
+    }
+
+    public static void reverseKthIndexOfQueue(int k){
+        ds.queue.Queue queue = new ArrayQueue();
+        queue.enqueue(10);
+        queue.enqueue(20);
+        queue.enqueue(30);
+        queue.enqueue(40);
+        queue.enqueue(50);
+        Stack stack = new Stack();
+        ds.queue.Queue tempQueue = new ArrayQueue();
+        for(int i = 0 ; i < k; i++){
+            stack.push(queue.dequeue());
+        }
+
+        while(!stack.isEmpty())
+            tempQueue.enqueue(stack.pop());
+        while (!queue.isEmpty())
+            tempQueue.enqueue(queue.dequeue());
+        queue = tempQueue;
+        System.out.println(queue);
+
+    }
+
+    public static void testLinkedListQueue(){
+        LinkedListQueue linkedListQueue = new LinkedListQueue();
+        linkedListQueue.enqueue(10);
+        linkedListQueue.enqueue(120);
+        linkedListQueue.enqueue(130);
+        linkedListQueue.enqueue(140);
+        System.out.println(linkedListQueue.dequeue());
+        System.out.println(linkedListQueue.dequeue());
+        System.out.println(linkedListQueue);
+        System.out.println(linkedListQueue.dequeue());
+        System.out.println(linkedListQueue.dequeue());
     }
 
 

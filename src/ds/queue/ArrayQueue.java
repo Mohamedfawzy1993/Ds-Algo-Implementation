@@ -9,7 +9,7 @@ import java.util.Arrays;
  */
 public class ArrayQueue implements Queue {
 
-    final int size = 3;
+    final int size = 5;
     Object[] objects = new Object[size];
     int first = 0 ;
     int last = 0;
@@ -53,6 +53,8 @@ public class ArrayQueue implements Queue {
     public String toString() {
         return Arrays.toString(this.objects);
     }
+
+
 }
 
     
