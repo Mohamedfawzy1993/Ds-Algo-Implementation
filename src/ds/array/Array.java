@@ -1,4 +1,4 @@
-package ds;
+package ds.array;
 
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 

@@ -1,9 +1,12 @@
-import ds.Array;
+import ds.array.Array;
 import ds.linkedlist.LinkedList;
+import ds.queue.ArrayQueue;
 import ds.stack.BalanceString;
 import ds.stack.Stack;
 
+import java.util.ArrayDeque;
 import java.util.Arrays;
+import java.util.Queue;
 
 
 /**
@@ -15,8 +18,12 @@ public class Main {
     public static void main(String[] args) {
         //testArrayImpl();
         //testLinkedListImpl();
-        System.out.println(new BalanceString().isBalanced("((<1>+<2>))[a]"));
-//        testStackImpl();
+        //System.out.println(new BalanceString().isBalanced("((<1>+<2>))[a]"));
+        //testStackImpl();
+        //testQueueReverse();
+        testArrayQueue();
+
+
     }
 
     public static void testArrayImpl() {
@@ -54,6 +61,32 @@ public class Main {
         System.out.println(stack.pop());
         System.out.println(stack.pop());
         System.out.println(stack.pop());
+    }
+
+    public static void testQueueReverse(){
+        Queue<Integer> integers = new ArrayDeque<>();
+        integers.add(10);
+        integers.add(20);
+        integers.add(30);
+
+        Stack integerStack = new Stack();
+        while(!integers.isEmpty())
+            integerStack.push(integers.remove());
+        while (!integerStack.isEmpty())
+            integers.add((Integer)integerStack.pop());
+        System.out.println(integers);
+
+    }
+
+    public static void testArrayQueue(){
+        ds.queue.Queue queue = new ArrayQueue();
+        queue.enqueue(10);
+        queue.enqueue(20);
+        queue.enqueue(30);
+        queue.dequeue();
+        queue.enqueue(40);
+
+        System.out.println(queue);
     }
 
 
