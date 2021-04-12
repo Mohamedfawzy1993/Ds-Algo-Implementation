@@ -1,5 +1,9 @@
 package ds.stack;
 
+import ds.array.Array;
+
+import java.util.Arrays;
+
 /**
  * The Class Stack
  *
@@ -39,7 +43,10 @@ public class Stack {
         return length == 0;
     }
 
-
+    @Override
+    public String toString() {
+        return Arrays.toString(stack);
+    }
 }
 
     

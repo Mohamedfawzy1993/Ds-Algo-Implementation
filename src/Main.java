@@ -1,6 +1,7 @@
 import ds.array.Array;
 import ds.linkedlist.LinkedList;
 import ds.queue.ArrayQueue;
+import ds.queue.StackQueue;
 import ds.stack.BalanceString;
 import ds.stack.Stack;
 
@@ -21,7 +22,7 @@ public class Main {
         //System.out.println(new BalanceString().isBalanced("((<1>+<2>))[a]"));
         //testStackImpl();
         //testQueueReverse();
-        testArrayQueue();
+        testQueueWith2Stacks();
 
 
     }
@@ -87,6 +88,18 @@ public class Main {
         queue.enqueue(40);
 
         System.out.println(queue);
+    }
+
+    public static void testQueueWith2Stacks(){
+        ds.queue.Queue queue = new StackQueue();
+//        queue.enqueue(10);
+//        queue.enqueue(20);
+//        queue.enqueue(30);
+
+//        System.out.println(queue);
+        System.out.println(queue.dequeue());
+        System.out.println(queue.dequeue());
+        System.out.println(queue.dequeue());
     }
 
 
