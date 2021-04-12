@@ -9,7 +9,10 @@ import ds.stack.Stack;
 
 import java.util.ArrayDeque;
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Queue;
+import java.util.Set;
 
 
 /**
@@ -27,7 +30,10 @@ public class Main {
         //testQueueWith2Stacks();
         //testPrioQueue();
         //reverseKthIndexOfQueue(3);
-        testLinkedListQueue();
+        //testLinkedListQueue();
+        //testJavaHashMap();
+        //testJavaSet();
+        testHashMap();
     }
 
     public static void testArrayImpl() {
@@ -163,6 +169,40 @@ public class Main {
         System.out.println(linkedListQueue);
         System.out.println(linkedListQueue.dequeue());
         System.out.println(linkedListQueue.dequeue());
+    }
+
+    public static void testJavaHashMap() {
+        //Allow null "Key or Value"
+        String str = "a green apple";
+        HashMap<Character, Integer> characterIntegerHashMap = new HashMap<>();
+        for(char ch : str.toCharArray()){
+            characterIntegerHashMap.put(ch, characterIntegerHashMap.get(ch) == null ? 1 : characterIntegerHashMap.get(ch)+1);
+        }
+        for(char ch : characterIntegerHashMap.keySet()){
+            if(characterIntegerHashMap.get(ch) == 1) {
+                System.out.println(ch);
+                break;
+            }
+        }
+    }
+
+    public static void testJavaSet(){
+        Set<Integer> integerSet = new HashSet<>();
+        int[] numbers = {1, 2, 1, 3, 1, 2, 2, 5};
+        for(int number : numbers)
+            integerSet.add(number);
+        System.out.println(integerSet);
+    }
+
+    public static void testHashMap(){
+        ds.Hash.HashMap hashMap = new ds.Hash.HashMap();
+        hashMap.put(10, "Ten");
+        hashMap.put(11, "Eleven");
+        hashMap.put(1, "One");
+        System.out.println(hashMap);
+        hashMap.remove(11);
+        System.out.println(hashMap);
+
     }
 
 
