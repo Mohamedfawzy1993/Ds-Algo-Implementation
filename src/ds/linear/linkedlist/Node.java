@@ -1,4 +1,4 @@
-package ds.linkedlist;
+package ds.linear.linkedlist;
 
 /**
  * The Class Node

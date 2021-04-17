@@ -1,4 +1,4 @@
-package ds.queue;
+package ds.linear.queue;
 
 
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;

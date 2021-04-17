@@ -1,8 +1,7 @@
-package ds.stack;
+package ds.linear.stack;
 
 import java.util.Arrays;
 import java.util.List;
-import ds.stack.Stack;
 
 /**
  * The Class BalanceString

@@ -1,6 +1,6 @@
-package ds.queue;
+package ds.linear.queue;
 
-import ds.linkedlist.LinkedList;
+import ds.linear.linkedlist.LinkedList;
 
 import java.util.Arrays;
 

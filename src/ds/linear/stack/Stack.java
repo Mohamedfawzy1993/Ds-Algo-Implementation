@@ -1,6 +1,4 @@
-package ds.stack;
-
-import ds.array.Array;
+package ds.linear.stack;
 
 import java.util.Arrays;
 

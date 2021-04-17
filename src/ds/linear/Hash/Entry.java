@@ -1,4 +1,4 @@
-package ds.Hash;
+package ds.linear.Hash;
 
 /**
  * The Class Entry

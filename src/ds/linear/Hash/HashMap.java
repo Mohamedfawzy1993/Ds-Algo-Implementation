@@ -1,4 +1,4 @@
-package ds.Hash;
+package ds.linear.Hash;
 
 
 import java.util.Arrays;

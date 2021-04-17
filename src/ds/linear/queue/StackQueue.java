@@ -1,6 +1,6 @@
-package ds.queue;
+package ds.linear.queue;
 
-import ds.stack.Stack;
+import ds.linear.stack.Stack;
 
 /**
  * The Class StackQueue

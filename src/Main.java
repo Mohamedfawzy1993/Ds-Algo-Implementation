@@ -1,11 +1,19 @@
-import ds.array.Array;
-import ds.linkedlist.LinkedList;
-import ds.queue.ArrayQueue;
-import ds.queue.LinkedListQueue;
-import ds.queue.PriorityQueue;
-import ds.queue.StackQueue;
-import ds.stack.BalanceString;
-import ds.stack.Stack;
+import algorithms.StringUtils;
+import algorithms.search.BinarySearch;
+import algorithms.search.LinearSearch;
+import algorithms.search.Search;
+import algorithms.search.TernanrySearch;
+import algorithms.sort.LinearSort;
+import algorithms.sort.LogSort;
+import algorithms.sort.QuadraticSort;
+import ds.linear.array.Array;
+import ds.linear.linkedlist.LinkedList;
+import ds.linear.queue.ArrayQueue;
+import ds.linear.queue.LinkedListQueue;
+import ds.linear.queue.PriorityQueue;
+import ds.linear.queue.StackQueue;
+import ds.linear.stack.Stack;
+import ds.nonlinear.tree.binarysearchtree.BinarySearchTree;
 
 import java.util.ArrayDeque;
 import java.util.Arrays;
@@ -33,8 +41,14 @@ public class Main {
         //testLinkedListQueue();
         //testJavaHashMap();
         //testJavaSet();
-        testHashMap();
-    }
+        //testHashMap();
+        //testBinarySearchTree();
+        //testQuadraticSort();
+        //testLogSort();
+        //testLinearSort();
+        //testSearch();
+        testStringUtils();
+     }
 
     public static void testArrayImpl() {
         Array array = new Array(2);
@@ -89,7 +103,7 @@ public class Main {
     }
 
     public static void testArrayQueue(){
-        ds.queue.Queue queue = new ArrayQueue();
+        ds.linear.queue.Queue queue = new ArrayQueue();
         queue.enqueue(10);
         queue.enqueue(20);
         queue.enqueue(30);
@@ -100,7 +114,7 @@ public class Main {
     }
 
     public static void testQueueWith2Stacks(){
-        ds.queue.Queue queue = new StackQueue();
+        ds.linear.queue.Queue queue = new StackQueue();
         queue.enqueue(10);
         queue.enqueue(20);
         queue.enqueue(30);
@@ -137,14 +151,14 @@ public class Main {
     }
 
     public static void reverseKthIndexOfQueue(int k){
-        ds.queue.Queue queue = new ArrayQueue();
+        ds.linear.queue.Queue queue = new ArrayQueue();
         queue.enqueue(10);
         queue.enqueue(20);
         queue.enqueue(30);
         queue.enqueue(40);
         queue.enqueue(50);
         Stack stack = new Stack();
-        ds.queue.Queue tempQueue = new ArrayQueue();
+        ds.linear.queue.Queue tempQueue = new ArrayQueue();
         for(int i = 0 ; i < k; i++){
             stack.push(queue.dequeue());
         }
@@ -195,7 +209,7 @@ public class Main {
     }
 
     public static void testHashMap(){
-        ds.Hash.HashMap hashMap = new ds.Hash.HashMap();
+        ds.linear.Hash.HashMap hashMap = new ds.linear.Hash.HashMap();
         hashMap.put(10, "Ten");
         hashMap.put(11, "Eleven");
         hashMap.put(1, "One");
@@ -205,6 +219,83 @@ public class Main {
 
     }
 
+    public static void testBinarySearchTree(){
+        BinarySearchTree binarySearchTree = new BinarySearchTree();
+        binarySearchTree.addNode(7);
+        binarySearchTree.addNode(4);
+        binarySearchTree.addNode(9);
+        binarySearchTree.addNode(6);
+        binarySearchTree.addNode(8);
+        binarySearchTree.addNode(10);
+
+        binarySearchTree.traverse(BinarySearchTree.TraverseType.PRE_ORDER);
+        binarySearchTree.traverse(BinarySearchTree.TraverseType.POST_ORDER);
+        binarySearchTree.traverse(BinarySearchTree.TraverseType.IN_ORDER);
+        binarySearchTree.getHeight();
+        binarySearchTree.getMin();
+    }
+
+    public static void testQuadraticSort(){
+        Integer[] integer = new Integer[]{6, 3, 8, 2, 1, 1, 1, 1, 2, 2, 9, 4};
+        QuadraticSort quadraticSort = new QuadraticSort();
+        //sort.bubbleSort(integer);
+        //System.out.println("BubbleSort : "+Arrays.toString(integer));
+
+        //sort.selectionSort(integer);
+        //System.out.println("Selection Sort : "+Arrays.toString(integer));
+
+        quadraticSort.insertionSort(integer);
+        System.out.println("Insertion Sort : "+Arrays.toString(integer));
+
+    }
+
+    public static void testLogSort(){
+        int[] integer = new int[]{6, 3, 8, 2, 1, 1, 1, 1, 2, 2, 9, 4};
+        LogSort logSort = new LogSort();
+
+        //logSort.mergeSort(integer);
+        //System.out.println("Merge Sort : "+Arrays.toString(integer));
+
+        logSort.quickSort(integer);
+        System.out.println("Quick Sort : "+Arrays.toString(integer));
+
+    }
+
+    public static void testLinearSort(){
+        int[] integer = new int[]{6, 3, 8, 2, 1, 1, 1, 1, 2, 2, 9, 4};
+
+//        LinearSort linearSort = new LinearSort();
+//        linearSort.countingSort(integer);
+
+        LinearSort linearSort = new LinearSort();
+        linearSort.bucketSort(integer, 4);
+    }
+
+    public static void testSearch(){
+        int[] integer = new int[]{6, 3, 8, 2, 1, 1, 1, 1, 2, 2, 9, 4};
+        Search search = new LinearSearch();
+        System.out.println(search.search(integer, 9));
+        int[] sortedArray = new int[]{1,2,3,7,12,15,20,57};
+//        search = new BinarySearch();
+//        System.out.println(search.search(sortedArray, 33));
+        search = new TernanrySearch();
+        System.out.println(search.search(sortedArray, 15));
+
+    }
+
+    public static void testStringUtils(){
+        String str = "heLLo WOrld I'm Mohamed";
+        System.out.println(StringUtils.countVouls(str));
+        System.out.println(StringUtils.reverse(str));
+        System.out.println(StringUtils.reverseWords(str));
+        System.out.println(StringUtils.areRotate("ABDC", "DaAB"));
+        System.out.println(StringUtils.removeDuplicate("heLLo"));
+        System.out.println(StringUtils.mostRepeatedCharWithArr("heLLoadklsjeiqjwdlenfekjnq"));
+        System.out.println(StringUtils.capitalizeAll("hello WORld"));
+        System.out.println(StringUtils.capitalizeFirst(" Hello"));
+        System.out.println(StringUtils.isAnagram("abcd", "DACB"));
+        System.out.println(StringUtils.isPalindrome("ABA"));
+    }
 
 
 }
